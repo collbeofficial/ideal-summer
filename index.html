@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#111218">
+<title>픽셀 스토리 게임</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="game">
+  <div id="scene">
+    <div id="bg"></div>
+    <div id="props"></div>
+    <div id="shadow"></div>
+    <img id="player" src="assets/player-girl.png" alt="초여름">
+    <img id="carry" class="hidden" src="assets/item-bag.png" alt="가방">
+  </div>
+
+  <header id="hud">
+    <div id="hudInfo"><b id="area">기억의 마을</b><span id="objective">첫 번째 집을 찾아가세요.</span></div>
+    <button id="reset" aria-label="처음부터 다시 시작">↻</button>
+  </header>
+
+  <div id="hint" class="hidden">A 조사</div>
+  <div id="toast" class="hidden"></div>
+
+  <section id="dialogue" class="hidden" aria-live="polite">
+    <div class="portrait"><img id="portrait" alt=""></div>
+    <div class="copy"><b id="speaker"></b><p id="text"></p><div id="choices"></div><i>▼</i></div>
+  </section>
+
+  <section id="bag" class="hidden">
+    <header><div><small>B · 주머니</small><h2>가지고 있는 것</h2></div><button id="bagClose">닫기 B</button></header>
+    <p id="bagMsg"></p><div id="bagGrid"></div><div id="itemMenu" class="hidden"></div>
+  </section>
+
+  <div id="controls" aria-label="게임 조작 버튼">
+    <div id="ab">
+      <button id="bBtn" aria-label="주머니 열기"><b>B</b><span>주머니</span></button>
+      <button id="aBtn" aria-label="선택 및 대화"><b>A</b><span>선택</span></button>
+    </div>
+    <div id="dpad" aria-label="방향키">
+      <button data-dir="up" aria-label="위로 이동"></button>
+      <button data-dir="left" aria-label="왼쪽으로 이동"></button>
+      <button data-dir="right" aria-label="오른쪽으로 이동"></button>
+      <button data-dir="down" aria-label="아래로 이동"></button>
+    </div>
+  </div>
+
+  <section id="intro">
+    <div>
+      <p>숲속에서 길을 잃은 여름과 이상.<br>길을 헤매던 중, 의문의 강력한 바람이 불어와<br>이상을 어디론가 데려가고 마는데...</p>
+      <p>정신을 잃었다 깨어난 여름은<br>어떠한 마을에 도착해 있다.</p>
+      <button id="introNext">계속</button>
+    </div>
+  </section>
+
+  <section id="title" class="hidden">
+    <div>
+      <div class="heroes solo"><img src="assets/player-girl.png" alt="초여름"></div>
+      <p>초여름은 사라진 박이상을 찾아 마을의 문을 연다.</p>
+      <button id="start">게임 시작</button>
+      <em>이동: 방향키 · 선택: A · 주머니: B · 대화 넘기기: 스페이스/화면 터치</em>
+    </div>
+  </section>
+
+  <section id="ending" class="hidden"><div><p>THE END</p><button id="again">게임 다시하기</button></div></section>
+  <div id="transition" class="hidden" aria-hidden="true"></div>
+  <div id="flash" class="hidden"></div>
+</main>
+<audio id="bgm" src="assets/bgm.mp3" loop preload="auto"></audio>
+<script src="game.js"></script>
+</body>
+</html>
