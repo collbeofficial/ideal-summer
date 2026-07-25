@@ -9,6 +9,7 @@
 </head>
 <body>
 <main id="game">
+  <div id="stage">
   <div id="scene">
     <div id="bg"></div>
     <div id="props"></div>
@@ -35,18 +36,6 @@
     <p id="bagMsg"></p><div id="bagGrid"></div><div id="itemMenu" class="hidden"></div>
   </section>
 
-  <div id="controls" aria-label="게임 조작 버튼">
-    <div id="ab">
-      <button id="bBtn" aria-label="주머니 열기"><b>B</b><span>주머니</span></button>
-      <button id="aBtn" aria-label="선택 및 대화"><b>A</b><span>선택</span></button>
-    </div>
-    <div id="dpad" aria-label="방향키">
-      <button data-dir="up" aria-label="위로 이동"></button>
-      <button data-dir="left" aria-label="왼쪽으로 이동"></button>
-      <button data-dir="right" aria-label="오른쪽으로 이동"></button>
-      <button data-dir="down" aria-label="아래로 이동"></button>
-    </div>
-  </div>
 
   <section id="intro">
     <div>
@@ -68,6 +57,20 @@
   <section id="ending" class="hidden"><div><p>THE END</p><button id="again">게임 다시하기</button></div></section>
   <div id="transition" class="hidden" aria-hidden="true"></div>
   <div id="flash" class="hidden"></div>
+  </div><!-- /#stage -->
+
+  <div id="controls" aria-label="게임 조작 버튼">
+    <div id="ab">
+      <button id="bBtn" aria-label="주머니 열기"><b>B</b><span>주머니</span></button>
+      <button id="aBtn" aria-label="선택 및 대화"><b>A</b><span>선택</span></button>
+    </div>
+    <div id="dpad" aria-label="방향키">
+      <button data-dir="up" aria-label="위로 이동"></button>
+      <button data-dir="left" aria-label="왼쪽으로 이동"></button>
+      <button data-dir="right" aria-label="오른쪽으로 이동"></button>
+      <button data-dir="down" aria-label="아래로 이동"></button>
+    </div>
+  </div>
 </main>
 <audio id="bgm" src="assets/bgm.mp3" loop preload="auto"></audio>
 <script src="game.js"></script>
